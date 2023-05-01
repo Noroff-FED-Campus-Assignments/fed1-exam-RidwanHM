@@ -1,53 +1,30 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L66
-============================================
-*/
+const resultsContainer = document.querySelector("#js-list-container");
 
-// TODO: Get DOM elements from the DOM
+const url = "http://rhm-exam-2023.local/wp-json/wp/v2/posts/"
 
-/*
-============================================
-DOM manipulation
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L89
-============================================
-*/
+async function fetchcities () {
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+        
+        resultsContainer.innerHTML = "";
 
-// TODO: Fetch and Render the list to the DOM
+        const cities = json;
 
-// TODO: Create event listeners for the filters and the search
+        cities.forEach(function (city){
+            resultsContainer.innerHTML +=`
 
-/**
- * TODO: Create an event listener to sort the list.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L91
- */
+            <a href="/details.html?id=${city.id}">
+            <h2>${city.title.rendered}</h2>
+            <p> More Info </p>
+            </a>
+            `;
 
-/*
-============================================
-Data fectching
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
-============================================
-*/
+        })
+    } catch (error) {
+        console.log(error);
+        resultsContainer.innerHTML =`Error: ${error}`;
+    }
+}
 
-// TODO: Fetch an array of objects from the API
-
-/*
-============================================
-Helper functions
-https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L154
-============================================
-*/
-
-/**
- * TODO: Create a function to filter the list of item.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L135
- * @param {item} item The object with properties from the fetched JSON data.
- * @param {searchTerm} searchTerm The string used to check if the object title contains it.
- */
-
-/**
- * TODO: Create a function to create a DOM element.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
- * @param {item} item The object with properties from the fetched JSON data.
- */
+fetchcities();
