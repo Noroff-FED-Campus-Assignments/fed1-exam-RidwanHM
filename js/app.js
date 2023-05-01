@@ -2,7 +2,7 @@ const resultsContainer = document.querySelector("#js-list-container");
 
 const url = "http://rhm-exam-2023.local/wp-json/wp/v2/posts/"
 
-async function fetchcities () {
+async function fetchCities () {
     try {
         const response = await fetch(url);
         const json = await response.json();
@@ -27,4 +27,4 @@ async function fetchcities () {
     }
 }
 
-fetchcities();
+fetchCities();
