@@ -11,26 +11,38 @@
     />
     <meta name="author" content="Ridwan" />
     <link rel="stylesheet" href="/style.css" />
-    <script type="module" src="/js/details.js"></script>
+    <script type="module" src="/js/app.js"></script>
     <title>R1 Travels</title>
   </head>
   <body class="animate__animated animate__fadeIn">
     <header class="l-header">
-      <h1>List-item</h1>
+      <h1>Contact us</h1>
     </header>
 
     <main class="l-main">
       <section role="search"></section>
-
+        <img
+                src="/src/img/s-o-c-i-a-l-c-u-t-96A9UTFAMUM-unsplash.jpg"
+                loading="lazy"
+                alt="…"
+                class="u-img hero-image"
+                width="1024"
+                height="1024"
+                />
       <article role="doc-introduction">
-        <h2>City</h2>
-        <a href="/index.html">Go back to list</a>
+        <h2>Contact form</h2>
+            <p>You can contact us using this form</p>
+                <form>
+                    <div class="form-group">
+                        <label for="js-name">Name</label>
+                        <input type="text" id="js-name" required/>
+                        <p class="validation-container" id="js-name-message"></p>
+                    </div>
+                </form>
 
-        </article>
+        
 
-      <section role="list">
-        <div id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div>
-      </section>
+       
     </main>
 
     <footer class="l-footer">
