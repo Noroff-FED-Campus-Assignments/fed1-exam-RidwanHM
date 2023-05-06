@@ -1,30 +1,49 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L50
-============================================
-*/
+const formEl = document.querySelector("form");
+const nameEl = document.querySelector("#js-name");
+const emailEl = document.querySelector("#js-email");
+const subjectEl = document.querySelector("#js-subject");
+const contentEl = document.querySelector("#js-content");
 
-// TODO: Get DOM elements from the DOM
+formEl.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-// TODO: Create event listeners for the form
+    const name = nameEl.value;
+    const email = emailEl.value; 
+    const subject = subjectEl.value;
+    const content = contentEl.value;
 
-/*
-============================================
-API calls
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L157
-============================================
-*/
+    if (name === "") {
+        alert("Please enter a name")
+        return;
+    }
 
-// TODO: Set up a function to fetch data from the API
+    if (email === "") {
+        alert("please enter a email")
+        return;
+    }
 
-/*
-============================================
-Helper functions
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L118
-============================================
-*/
+    if (subject === "") {
+        alert("Should be more than 15 characters lonng")
+        return;
+    }
 
-// TODO: Create a function to validate an input field
+    if (content === "") {
+        alert("Should be more than 25 characters long")
+    }
 
-// TODO: Create a function to create a DOM element
+    alert("Form submitted")
+});
+
+emailEl.addEventListener("blur", (event) => {
+    const email = event.target.value.trim();
+
+    const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+
+    if (emailRegex.test(email)) {
+        event.target.classList.add("is-success");
+        event.target.classList.remove("is-error");
+    } else {
+        event.target.classList.add("is-error");
+        event.target.classList.remove("is-success");
+    }
+});
