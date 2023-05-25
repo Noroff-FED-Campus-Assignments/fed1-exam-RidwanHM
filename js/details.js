@@ -7,7 +7,7 @@ const params = new URLSearchParams(queryString) ;
 const id = params.get("id");
 
 
-const url = `http://rhm-exam-2023.local/wp-json/wp/v2/posts/${id}`;
+const url = `https://excellent-things.flywheelsites.com/wp-json/wp/v2/posts/${id}`;
 
 async function fetchCities() {
     try{
