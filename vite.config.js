@@ -8,7 +8,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         // ADD YOUR PAGES HERE
         contact: resolve(__dirname, "contact.html"),
-        blog: resolve(__dirname, "blogs.html"),
+        blog: resolve(__dirname, "blog.html"),
         blogDetail: resolve(__dirname, "details.html"),
         about: resolve(__dirname,"about.html"),
       },
