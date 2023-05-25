@@ -1,0 +1,244 @@
+@import "css/variables.css";
+@import "css/reset.css";
+@import "css/utilities.css";
+@import "css/layout.css";
+@import "css/form.css";
+@import "css/ui.css";
+
+
+
+
+
+
+
+header:hover {
+background-color:  rgba(0, 0, 0, 0.8);
+}
+.navbar {
+min-height: 70px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+padding: 0 24px;
+}
+
+body {
+    margin: 0;
+    padding-top: 1rem;
+    background-color:  rgb(0, 0, 0);
+  }
+  .fa-brands{
+    color: #ffffff;
+    margin: 0;
+    padding: 10px;
+    font-family: "Font Awesome 6 Brands";
+    }
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 94vh;
+    background-image: url(/src/img/denys-nevozhai-guNIjIuUcgY-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  header {
+    position: relative;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+  }
+  
+  
+  .logo-r1 {
+    width: 240px;
+    height: auto;
+  }
+
+  .fa-sharp1{
+    color: #ffffff;
+    margin: 0;
+    padding: 10px;
+    font-family: "Font Awesome 6 Brands";
+    }
+
+  .nav-item a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #b34520;
+  }
+  
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    
+}
+
+li{
+    list-style: none;
+}
+
+.main-content{
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+}
+
+.container-font-page{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.front-page-title{
+    padding: 2rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 19px;
+    color: #e8772e;
+}
+
+.cities a{
+    padding: 2rem;
+    color: #b34520;
+    font-size: calc(1rem + 3vw);
+    transition: 0.5s ease;
+    border-radius: 15px;
+}
+
+.swiper-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 200px;
+    background:linear-gradient(180deg, #e8772d4d 68.57%, rgb(232 119 45 / 30%) 100%);
+    margin:1rem 0 1rem 0;
+    
+}
+  
+
+
+.carousel-post img {
+    width: 100%;
+    height: auto;
+    max-width: 300px; 
+  }
+
+
+
+
+  footer{
+    background:linear-gradient(180deg, #01051b 68.57%, rgb(232 119 45 / 30%) 100%);
+    width: 100%;
+    margin-top: auto;
+    }
+    
+    .footerlogo{
+    width: 223px;
+    }
+    
+    .bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .bottom p{
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    }
+    
+    .payment-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    }
+
+
+   
+    
+    
+ 
+        
+    
+    
+    
+   
+
+
+  
+  
+@media screen and (min-width:700px){
+    .navbar {
+        min-height: 70px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+        }
+
+        .nav-menu{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;}
+
+            .nav-item a{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 19px;
+                color: #b34520;
+              }
+} @media screen and (min-width:990px){
+    
+    header{
+    height: 71px;
+    display: flex;
+    justify-content: center;}
+    
+    .logo{width: 68px;}
+    .logo-name{
+    font-size: 20px;
+    width: 300px;
+    padding-top: 2rem;}
+    .navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 1rem;
+    width:100%;
+    }
+    .desktop-nav{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 1rem;}
+    
+    .desktop-footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    }
+    }
+
+@media (max-width: 768px) {
+  /* Adjust the breakpoint value as needed */
+  .swiper-container {
+    max-width: 100%;
+  }
+}

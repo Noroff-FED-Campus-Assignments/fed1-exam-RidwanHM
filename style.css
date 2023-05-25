@@ -11,3 +11,101 @@
 @import "css/layout.css";
 @import "css/form.css";
 @import "css/ui.css";
+
+.load-more-button{
+    color: #ee6907;
+    width: 10rem;
+    height: 2rem;
+    background-color: black;
+    border-radius: 25px;
+    margin-top: 1rem;
+}
+
+header:hover {
+    background-color:  rgba(0, 0, 0, 0.8);
+    }
+    .navbar {
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    }
+
+    header {
+        position: relative;
+        width: 100%;
+        transition: 0.3s ease-in-out;
+      }
+      
+      
+      .logo-r1 {
+        width: 240px;
+        height: auto;
+      }
+    
+      .fa-sharp1{
+        color: #ffffff;
+        margin: 0;
+        padding: 10px;
+        font-family: "Font Awesome 6 Brands";
+        }
+    
+      .nav-item a{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        color: #b34520;
+      }
+      
+    
+    .nav-menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        
+    }
+    
+    li{
+        list-style: none;
+    }
+
+
+    footer{
+        background:linear-gradient(180deg, #01051b 68.57%, rgb(232 119 45 / 30%) 100%);
+        width: 100%;
+        margin-top: auto;
+        }
+        
+        .footerlogo{
+        width: 223px;
+        }
+        
+        .bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+        
+        .bottom p{
+        color: #ffffff;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .payment-options{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        }
+
+        .list-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50vw;
+        height: auto;
+        }
