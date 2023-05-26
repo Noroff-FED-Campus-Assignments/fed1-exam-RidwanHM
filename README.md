@@ -27,7 +27,17 @@ YOu can update your deployment pipeling by editing the [vercel.json](https://ver
 
 ## Report
 
-_ADD_YOUR_REPORT_HERE_
+I had a school project that involved creating a headless CMS for a website. We were given the freedom to choose the topic for our website but had some specific criteria to follow. Firstly, we needed to use a platform to host our list and then utilize that list on our website. Additionally, we were required to create a contact form using JavaScript to validate the inputs.
+For my project, I wanted to create something that would be interesting for an audience in my age group and reflect my own interests and experiences. Therefore, I decided to make a website about travel destinations, specifically cities that I have personally visited. To begin, I used logo.com to design a logo that suited my website. The logo incorporates "R1," which stands for Ridwan or Rid1, my name.
+
+To create the list, I initially attempted to use my own pictures but encountered difficulties, so I opted to use images from unsplash.com instead. I gathered a list of 12 cities, each accompanied by an image and text describing the city. To generate the text, I utilized openai.com to ensure the content was relevant to each post.
+Regarding the design, I aimed for simplicity to make it easy for readers to navigate. I placed a background image of a beach and island on the index page to make it visually appealing, but for the other pages, I avoided using background images to prevent overwhelming the reader. As part of the project criteria, I included a carousel slider on the homepage, which made the list easy to browse.
+
+For coding, I used HTML, CSS, and JavaScript. HTML and CSS were used for styling, while JavaScript was responsible for fetching and displaying the list on my pages. On the homepage, I utilized a carousel slider to showcase the city names and images in a horizontal row with arrow buttons for navigation. The blog page displayed the entire list, initially showing 10 cities, and when the "load more" button was pressed, it revealed additional cities.
+During the development process, I encountered a red underline in the carousel code under "new swiper." This issue arose because I used the Swiper library, and there might have been a syntax problem. However, I tested the code and verified its functionality and use openai.com to check. It said that everything was fine and that I should continue, so I ignored the red underline. Some of the images in the list disappeared whenever I made changes, but this was likely related to the WordPress platform rather than an issue with my code. Overall, I did not encounter any major difficulties with my coding or the project itself.
+
+I generated the text for the "About" page using openai.com, which provides information about R1 Travels. Lastly, I implemented a contact form using JavaScript that validated user input, displaying error messages if anything was entered incorrectly.
+After completing the coding, I used hotjar.com to track user interactions on my website and identify areas for improvement. I discovered that the filter box was causing issues with the list, so I removed it. I also made CSS improvements to enhance the overall user experience, which is why the appearance of my Figma (design) and actual page may differ slightly.
 
 ## Getting Started
 
