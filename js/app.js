@@ -1,8 +1,8 @@
 const resultsContainer = document.querySelector("#js-list-container");
 const loadMoreButton = document.querySelector("#load-more");
 
-const postsUrl = "http://ridwantryex.local/wp-json/wp/v2/posts/";
-const mediaUrl = "http://ridwantryex.local/wp-json/wp/v2/media/";
+const postsUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/posts/";
+const mediaUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/media/";
 
 let currentPage = 1;
 const postsPerPage = 10;
