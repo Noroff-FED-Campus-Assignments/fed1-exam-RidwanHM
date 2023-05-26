@@ -1,30 +1,93 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L50
-============================================
-*/
+const formEl = document.querySelector("form");
+const nameEl = document.querySelector("#js-name");
+const emailEl = document.querySelector("#js-email");
+const subjectEl = document.querySelector("#js-subject");
+const contentEl = document.querySelector("#js-content");
 
-// TODO: Get DOM elements from the DOM
+formEl.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-// TODO: Create event listeners for the form
+    const name = nameEl.value;
+    const email = emailEl.value; 
+    const subject = subjectEl.value;
+    const content = contentEl.value;
 
-/*
-============================================
-API calls
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L157
-============================================
-*/
+    if (name === "" || name.length < 2) {
+        alert("Please enter a name with at least two characters")
+        return;
+    }
+    
 
-// TODO: Set up a function to fetch data from the API
+    if (email === "") {
+        alert("please enter a email")
+        return;
+    }
 
-/*
-============================================
-Helper functions
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/advanced-form.html#L118
-============================================
-*/
+    if (subject === "" || subject.length < 16) {
+        alert("Subject should be more than 15 characters long")
+        return;
+    }
 
-// TODO: Create a function to validate an input field
+    if (content === "" || content.length < 26) {
+        alert("Content should be more than 25 characters long")
+        return;
+    }
 
-// TODO: Create a function to create a DOM element
+    alert("Form submitted!")
+});
+
+nameEl.addEventListener("blur", (event) => {
+    const email = event.target.value.trim();
+
+    const emailRegex = /^[a-zA-Z]{2,}$/;
+
+    if (emailRegex.test(email)) {
+        event.target.classList.add("is-success");
+        event.target.classList.remove("is-error");
+    } else {
+        event.target.classList.add("is-error");
+        event.target.classList.remove("is-success");
+    }
+});
+
+emailEl.addEventListener("blur", (event) => {
+    const email = event.target.value.trim();
+
+    const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+
+    if (emailRegex.test(email)) {
+        event.target.classList.add("is-success");
+        event.target.classList.remove("is-error");
+    } else {
+        event.target.classList.add("is-error");
+        event.target.classList.remove("is-success");
+    }
+});
+
+subjectEl.addEventListener("blur", (event) => {
+    const email = event.target.value.trim();
+
+    const emailRegex = /^.{16,}$/;
+
+    if (emailRegex.test(email)) {
+        event.target.classList.add("is-success");
+        event.target.classList.remove("is-error");
+    } else {
+        event.target.classList.add("is-error");
+        event.target.classList.remove("is-success");
+    }
+});
+
+contentEl.addEventListener("blur", (event) => {
+    const email = event.target.value.trim();
+
+    const emailRegex = /^.{26,}$/;
+
+    if (emailRegex.test(email)) {
+        event.target.classList.add("is-success");
+        event.target.classList.remove("is-error");
+    } else {
+        event.target.classList.add("is-error");
+        event.target.classList.remove("is-success");
+    }
+});

@@ -1,46 +1,33 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L66
-============================================
-*/
+const detailsContainer = document.querySelector("#js-list-container");
 
-// TODO: Get DOM elements from the DOM
+const queryString = document.location.search;
 
-// TODO: Get the query parameter from the URL
+const params = new URLSearchParams(queryString) ;
 
-// TODO: Get the id from the query parameter
+const id = params.get("id");
 
-// TODO: Create a new URL with the id @example: https://www.youtube.com/shorts/ps7EkRaRMzs
 
-/*
-============================================
-DOM manipulation
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L89
-============================================
-*/
+const url = `https://fluffy-line.flywheelsites.com/wp-json/wp/v2/posts/${id}`;
 
-// TODO: Fetch and Render the list to the DOM
+async function fetchCities() {
+    try{
+        const response = await fetch(url);
+        const details = await response.json();
 
-// TODO: Create event listeners for the filters and the search
+        createHtml(details);
+    }
+    catch (error){
+        console.log(error);
+        detailsContainer.innerHTML = error("error", error);
+    }
+}
 
-/*
-============================================
-Data fectching
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
-============================================
-*/
+fetchCities();
 
-// TODO: Fetch an a single of objects from the API
+function createHtml(details) {
+    detailsContainer.innerHTML = `
+    <h1>${details.title.rendered}</h1>
+    <p>${details.content.rendered}</p>
+    `;
 
-/*
-============================================
-Helper functions
-============================================
-*/
-
-/**
- * TODO: Create a function to create a DOM element.
- * @example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
- * @param {item} item The object with properties from the fetched JSON data.
- */
+}

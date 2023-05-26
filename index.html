@@ -1,49 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="_REPLACE_WITH_DESCRIPTION_" />
-    <meta
-      name="keywords"
-      content="HTML, CSS, JavaScript, _REPLACE_WITH_KEYWORD_"
-    />
-    <meta name="author" content="_YOUR_NAME_" />
-    <link rel="stylesheet" href="/style.css" />
-    <!-- TODO: Import Javascript -->
-    <title>_REPLACE_SITE_NAME</title>
-  </head>
-  <body class="animate__animated animate__fadeIn">
-    <header class="l-header">
-      <h1>Home</h1>
+    <meta name="description" content="Travelsite" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Travel" />
+    <meta name="author" content="Ridwan" />
+    <link rel="stylesheet" href="/home.css" />
+    <script type="module" src="/js/carousel.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <!-- Hotjar Tracking Code for Ridwan Exam -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3508371,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+    <title>R1 Travels</title>
+</head>
+<body>
+    <div class="background-image"></div>
+    <header>
+        <nav class="navbar">
+            <a href="/index.html"><img class="logo-r1" src="/src/img/logo-no-background.png" alt="company logo" /></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/blog.html">BLOGS</a></li>
+                <li class="nav-item"><a href="/about.html">ABOUT</a></li>
+                <li class="nav-item"><a href="/contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <main class="l-main">
-      <section role="search"></section>
-
-      <article role="doc-introduction">
-        <h2>List</h2>
-
-        <img
-          src="/placeholder.jpg"
-          loading="lazy"
-          alt="…"
-          class="u-img hero-image"
-          width="1024"
-          height="1024"
-        />
-
-        <p>_REPLACE_INTRODUCTION_</p>
-      </article>
-
-      <section role="list">
-        <div id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div>
-      </section>
+    <main class="main-content">
+        <section class="container-front-page">
+            <div class="front-page-title">
+                <h1>Explore the right way</h1>
+            </div>
+            <div class="cities">
+                <a href="/blog.html">See most popular cities</a>
+            </div>
+        </section>
     </main>
+    
+        <div class="swiper-container">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
 
-    <footer class="l-footer">
-      <small>Created with ❤️ by _REPLACE_</small>
-    </footer>
-  </body>
+        <footer>
+            <div class="bottom">
+                
+              <section class="desktop-footer">
+                <div class="footer-nav">
+                    <a class="navpoint" href="/index.html">Home</a>
+                    <a class="nav-normal" href="/blog.html">Blogs</a>
+                    <a class="nav-normal" href="/about.html">About</a>
+                    <a class="nav-normal" href="/contact.html">Contact</a>
+                </div>     
+                <div>
+                    <p>CONTACT US</p>
+                    <p>Tlf:9745xx34</p>
+                    <p>Email:R1Travels@noroff.com</p>
+                </div>
+        
+                <div>
+                    <p>R1 Travels</p>
+                    <p>ADRESSS</p>
+                    <p>Hovseterveien 88 0768 OSLO</p>
+                </div>
+        
+                <div>
+        
+                    <p>Payments & Socials</p>
+                    <div class="payment-options">
+                        <p><i class="fa-brands fa-cc-visa"></i></p>
+                        <p><i class="fa-brands fa-cc-mastercard"></i></p>
+                        <p><i class="fa-brands fa-cc-paypal"></i></p>
+                        <p><i class="fa-brands fa-apple-pay"></i></p>
+                    </div>
+                    <div class="payment-options">
+                        <p><i class="fa-brands fa-facebook"></i></p>
+                        <p><i class="fa-brands fa-instagram"></i></i></p>
+                        <p><i class="fa-brands fa-twitter"></i></i></p>
+                        <p><i class="fa-brands fa-snapchat"></i></p>
+                    </div>
+                </div>    
+                
+            </section>    
+                <img class="footerlogo" src="/src/img/logo-no-background.png" alt="Logo"/>
+            </div>
+        </footer>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
 </html>

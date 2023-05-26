@@ -1,53 +1,99 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L66
-============================================
-*/
+const resultsContainer = document.querySelector("#js-list-container");
+const loadMoreButton = document.querySelector("#load-more");
 
-// TODO: Get DOM elements from the DOM
+const postsUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/posts/";
+const mediaUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/media/";
 
-/*
-============================================
-DOM manipulation
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L89
-============================================
-*/
+let currentPage = 1;
+const postsPerPage = 10;
 
-// TODO: Fetch and Render the list to the DOM
+async function fetchCities() {
+  try {
+    const postsResponse = await fetch(`${postsUrl}?page=${currentPage}&per_page=${postsPerPage}`);
+    const posts = await postsResponse.json();
 
-// TODO: Create event listeners for the filters and the search
+    const mediaResponse = await fetch(mediaUrl);
+    const media = await mediaResponse.json();
 
-/**
- * TODO: Create an event listener to sort the list.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L91
- */
+    let html = "";
 
-/*
-============================================
-Data fectching
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
-============================================
-*/
+    posts.forEach(city => {
+      const featuredImageId = city.featured_media;
+      const featuredImage = media.find(image => image.id === featuredImageId);
+      const imageUrl = featuredImage ? featuredImage.source_url : "";
 
-// TODO: Fetch an array of objects from the API
+      html += `
+        <div class="image-container">
+          <h2>${city.title.rendered}</h2>
+          <img src="${imageUrl}" alt="Featured Image" class="city-image" data-original-width="200">
+          <a href="/details.html?id=${city.id}"><p>Press here for more Info about ${city.title.rendered}</p></a>
+        </div>`;
+    });
 
-/*
-============================================
-Helper functions
-https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L154
-============================================
-*/
+    if (currentPage === 1) {
+      resultsContainer.innerHTML = html;
+    } else {
+      resultsContainer.innerHTML += html;
+    }
 
-/**
- * TODO: Create a function to filter the list of item.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L135
- * @param {item} item The object with properties from the fetched JSON data.
- * @param {searchTerm} searchTerm The string used to check if the object title contains it.
- */
+    if (posts.length >= postsPerPage) {
+      loadMoreButton.style.display = "block";
+    } else {
+      loadMoreButton.style.display = "none";
+    }
 
-/**
- * TODO: Create a function to create a DOM element.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
- * @param {item} item The object with properties from the fetched JSON data.
- */
+    addImageClickHandlers();
+  } catch (error) {
+    resultsContainer.innerHTML = `Error: ${error}`;
+  }
+}
+
+function handleLoadMoreClick() {
+  currentPage++;
+  fetchCities();
+}
+
+function addImageClickHandlers() {
+  const imageContainers = document.querySelectorAll(".image-container");
+
+  imageContainers.forEach(container => {
+    const image = container.querySelector(".city-image");
+
+    image.addEventListener("click", event => {
+      event.stopPropagation();
+      const isEnlarged = image.classList.contains("enlarged");
+
+      if (isEnlarged) {
+        image.style.transform = "scale(1)";
+      } else {
+        image.style.transform = "scale(1.5)";
+      }
+
+      image.classList.toggle("enlarged");
+    });
+  });
+
+  document.addEventListener("click", event => {
+    const clickedElement = event.target;
+
+    if (!clickedElement.classList.contains("city-image")) {
+      imageContainers.forEach(container => {
+        const image = container.querySelector(".city-image");
+
+        if (image.classList.contains("enlarged")) {
+          image.style.transform = "scale(1)";
+          image.classList.remove("enlarged");
+        }
+      });
+    }
+  });
+}
+
+loadMoreButton.addEventListener("click", handleLoadMoreClick);
+
+
+
+
+
+fetchCities();
+
