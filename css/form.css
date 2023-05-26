@@ -4,21 +4,60 @@
  * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-2/forms
  */
 
-.c-form {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: var(--spacing-1);
-  padding: var(--spacing-1);
-  background-color: var(--color-white);
-  border-radius: var(--radius-1);
-  box-shadow: var(--shadow-1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%; 
-  border-radius: 33px;
-  background-color: #00041a;  
+ .c-form {
+  background-color: #0106155c;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.c-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.c-form p {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+
+button[type="submit"] {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #555555;
+}
+
+.validation-container {
+  color: red;
+  margin-top: 5px;
+}
+
+
+
 
 

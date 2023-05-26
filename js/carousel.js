@@ -1,12 +1,9 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const resultsContainer = document.querySelector(".swiper-wrapper");
-    const searchInput = document.getElementById("searchInput");
     
   
-
     const postsUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/posts/";
-const mediaUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/media/";
+    const mediaUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/media/";
   
     let media = [];
     let posts = [];
@@ -21,20 +18,11 @@ const mediaUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/media/";
   
         renderPosts(posts);
   
-        searchInput.removeEventListener("input", handleSearchInput);
-        searchInput.addEventListener("input", handleSearchInput);
-  
         return { media, posts };
       } catch (error) {
         resultsContainer.innerHTML = `Error: ${error}`;
         return { error };
       }
-    }
-  
-    function filterPostsByTitle(searchText) {
-      return posts.filter((post) =>
-        post.title.rendered.toLowerCase().includes(searchText.toLowerCase())
-      );
     }
   
     function renderPosts(posts) {
@@ -47,7 +35,7 @@ const mediaUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/media/";
         const postId = blog.id;
   
         const detailsPageUrl = `/details.html?id=${postId}`;
-
+  
         html += `
           <div class="swiper-slide">
             <div class="carousel-post">
@@ -76,7 +64,7 @@ const mediaUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/media/";
         console.error("Error:", error);
       }
     }
- 
+  
     function initializeSwiper() {
       new Swiper(".swiper-container", {
         slidesPerView: 5,
@@ -100,12 +88,6 @@ const mediaUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/media/";
       });
     }
   
-    function handleSearchInput() {
-      const searchText = searchInput.value.trim().toLowerCase();
-      const filteredPosts = filterPostsByTitle(searchText);
-      renderPosts(filteredPosts);
-    }
-  
     fetchPostsAndRender()
       .then(() => {
         initializeSwiper();
@@ -114,5 +96,4 @@ const mediaUrl = "https://fluffy-line.flywheelsites.com/wp-json/wp/v2/media/";
         console.error("Error:", error);
       });
   });
-  
   

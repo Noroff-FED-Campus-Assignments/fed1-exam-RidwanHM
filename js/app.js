@@ -91,4 +91,9 @@ function addImageClickHandlers() {
 
 loadMoreButton.addEventListener("click", handleLoadMoreClick);
 
+
+
+
+
 fetchCities();
+

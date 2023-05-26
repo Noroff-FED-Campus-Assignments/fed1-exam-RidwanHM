@@ -109,3 +109,29 @@ header:hover {
         width: 50vw;
         height: auto;
         }
+
+        section[role="list"] {
+            margin-top: 20px;
+          }
+          
+          .list-container {
+            background-color: #0106155c;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          }
+          
+          .load-more-button {
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+          }
+          
+          .load-more-button:hover {
+            background-color: #555555;
+          }
+          
