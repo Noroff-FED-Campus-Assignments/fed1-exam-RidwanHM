@@ -1,5 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/EF97x2Z3)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11024550&assignment_repo_type=AssignmentRepo)
+
 # FED Exam - Vanilla Front-end Website
 
 This bootstrap template is intended to help you deliever a amazing website which delights your end-users. Feel free to change, remove or start your own project from scratch. Please replace any text which starts with an `_`.
@@ -10,14 +11,12 @@ This project was bootstrapped with Vite.
 
 ## Resources
 
-<!-- You must replace these links -->
-
 - [Brief](https://fed-vocational-astro-course.vercel.app/en/exam-1/brief)
-- [Design](_LINK_TO_FIGMA_)
-- [Production deploy](_LINK_TO_WEBSITE_)
-- [Deployment CI](_LINK_TO_NETLIFY_VERCEL_DASHBOARD_)
-- [API Docs](_LINK_TO_API_DOCS_)
-- [API Endpoint](_LINK_TO_API_DOC)
+- [Design](https://www.figma.com/file/J70oTdtt2aaLOdnQLwqqDS/Untitled?type=design&node-id=0%3A1&t=Qnkpz6QQtY13muFL-1)
+- [Production deploy](https://venerable-valkyrie-03b402.netlify.app)
+- [Deployment CI](https://app.netlify.com/sites/venerable-valkyrie-03b402/overview)
+- [API Docs](https://fluffy-line.flywheelsites.com/wp-json/wp/v2/posts/)
+- [API Endpoint](https://fluffy-line.flywheelsites.com/wp-json/wp/v2/media/)
 
 ## Deployment
 
@@ -157,5 +156,5 @@ Make sure you go through this checklist before submitting your project to Moodle
 
 ## Authors
 
-- _YOURE_NAME_ (@_your_github_username_)
+- Ridwan Hashi Mohamud (@RidwanHM)
 - Monde Sineke (@S3ak)
