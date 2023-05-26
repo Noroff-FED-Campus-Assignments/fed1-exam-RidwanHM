@@ -10,7 +10,7 @@
 }
 
 .hero-image {
-  max-width: 480px;
+  width: 100%;
   margin: auto;
   aspect-ratio: var(--ratio-landscape);
 }

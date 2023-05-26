@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
   
 
-    const postsUrl = "https://excellent-things.flywheelsites.com/wp-json/wp/v2/posts/";
-    const mediaUrl = "https://excellent-things.flywheelsites.com/wp-json/wp/v2/media/";
+    const postsUrl = "http://ridwantryex.local/wp-json/wp/v2/posts/";
+    const mediaUrl = "http://ridwantryex.local/wp-json/wp/v2/media/";
   
     let media = [];
     let posts = [];

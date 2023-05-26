@@ -1,8 +1,8 @@
 const resultsContainer = document.querySelector("#js-list-container");
 const loadMoreButton = document.querySelector("#load-more");
 
-const postsUrl = "https://excellent-things.flywheelsites.com/wp-json/wp/v2/posts/";
-const mediaUrl = "https://excellent-things.flywheelsites.com/wp-json/wp/v2/media/";
+const postsUrl = "http://ridwantryex.local/wp-json/wp/v2/posts/";
+const mediaUrl = "http://ridwantryex.local/wp-json/wp/v2/media/";
 
 let currentPage = 1;
 const postsPerPage = 10;
@@ -23,10 +23,11 @@ async function fetchCities() {
       const imageUrl = featuredImage ? featuredImage.source_url : "";
 
       html += `
-        <h2>${city.title.rendered}</h2>
-        <img src="${imageUrl}" alt="Featured Image" class="city-image">
-        <a href="/details.html?id=${city.id}"><p>Press the image for more Info</p>
-      </a>`;
+        <div class="image-container">
+          <h2>${city.title.rendered}</h2>
+          <img src="${imageUrl}" alt="Featured Image" class="city-image" data-original-width="200">
+          <a href="/details.html?id=${city.id}"><p>Press here for more Info about ${city.title.rendered}</p></a>
+        </div>`;
     });
 
     if (currentPage === 1) {
@@ -40,6 +41,8 @@ async function fetchCities() {
     } else {
       loadMoreButton.style.display = "none";
     }
+
+    addImageClickHandlers();
   } catch (error) {
     resultsContainer.innerHTML = `Error: ${error}`;
   }
@@ -48,6 +51,42 @@ async function fetchCities() {
 function handleLoadMoreClick() {
   currentPage++;
   fetchCities();
+}
+
+function addImageClickHandlers() {
+  const imageContainers = document.querySelectorAll(".image-container");
+
+  imageContainers.forEach(container => {
+    const image = container.querySelector(".city-image");
+
+    image.addEventListener("click", event => {
+      event.stopPropagation();
+      const isEnlarged = image.classList.contains("enlarged");
+
+      if (isEnlarged) {
+        image.style.transform = "scale(1)";
+      } else {
+        image.style.transform = "scale(1.5)";
+      }
+
+      image.classList.toggle("enlarged");
+    });
+  });
+
+  document.addEventListener("click", event => {
+    const clickedElement = event.target;
+
+    if (!clickedElement.classList.contains("city-image")) {
+      imageContainers.forEach(container => {
+        const image = container.querySelector(".city-image");
+
+        if (image.classList.contains("enlarged")) {
+          image.style.transform = "scale(1)";
+          image.classList.remove("enlarged");
+        }
+      });
+    }
+  });
 }
 
 loadMoreButton.addEventListener("click", handleLoadMoreClick);
